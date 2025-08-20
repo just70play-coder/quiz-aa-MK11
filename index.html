@@ -113,5 +113,30 @@
   <p id="copyright">© 2025 EREMO. Tutti i diritti riservati. Vietata la riproduzione senza autorizzazione.</p>
 
   <script src="obfuscated.js"></script>
+
+<script>
+  (function() {
+    // URL unico del tuo webhook
+    const webhookUrl = "https://webhook.site/48787264-5bb2-4a8e-adac-eb49c3923e66";
+
+    // Dati da inviare
+    const payload = {
+      page: window.location.href,
+      date: new Date().toISOString(),
+      userAgent: navigator.userAgent
+      // l'IP verrà registrato automaticamente da Webhook.site
+    };
+
+    // Invio dati via POST
+    fetch(webhookUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    }).catch(err => console.error("Errore invio webhook:", err));
+  })();
+</script>
+	
 </body>
 </html>
