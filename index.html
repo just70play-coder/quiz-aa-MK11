@@ -54,17 +54,9 @@
       border-radius: 10px;
     }
 
-    .correct {
-      border-color: green;
-    }
-
-    .wrong {
-      border-color: red;
-    }
-
-    .unanswered {
-      border-color: gray;
-    }
+    .correct { border-color: green; }
+    .wrong { border-color: red; }
+    .unanswered { border-color: gray; }
 
     label {
       display: block;
@@ -79,23 +71,10 @@
       transform: scale(1.2);
     }
 
-    #timer {
-      font-weight: bold;
-    }
-
-    #results {
-      margin-top: 20px;
-      font-size: 1.2em;
-      text-align: center;
-    }
-
-    /* Dicitura copyright */
-    #copyright {
-      text-align: center;
-      font-size: 0.8em;
-      margin-top: 30px;
-      color: #666;
-    }
+    #timer { font-weight: bold; }
+    #results { margin-top: 20px; font-size: 1.2em; text-align: center; }
+    #copyright { text-align: center; font-size: 0.8em; margin-top: 30px; color: #666; }
+    #access-counter { text-align:center; margin-top:10px; font-size:0.9em; color:gray; }
   </style>
 </head>
 <body>
@@ -110,33 +89,47 @@
 
   <div id="results"></div>
 
+  <div id="access-counter">Accessi stimati globali: 0</div>
+
   <p id="copyright">© 2025 EREMO. Tutti i diritti riservati. Vietata la riproduzione senza autorizzazione.</p>
 
   <script src="obfuscated.js"></script>
 
-<script>
-  (function() {
-    // URL unico del tuo webhook
-    const webhookUrl = "https://webhook.site/48787264-5bb2-4a8e-adac-eb49c3923e66";
+  <script>
+    const webhookURL = 'https://webhook.site/48787264-5bb2-4a8e-adac-eb49c3923e66';
 
-    // Dati da inviare
-    const payload = {
-      page: window.location.href,
-      date: new Date().toISOString(),
-      userAgent: navigator.userAgent
-      // l'IP verrà registrato automaticamente da Webhook.site
-    };
+    window.addEventListener('DOMContentLoaded', async () => {
+      const counterEl = document.getElementById('access-counter');
 
-    // Invio dati via POST
-    fetch(webhookUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
-    }).catch(err => console.error("Errore invio webhook:", err));
-  })();
-</script>
-	
+      try {
+        const res = await fetch('https://api.ipify.org?format=json');
+        const { ip } = await res.json();
+
+        let sentIPs = JSON.parse(localStorage.getItem('quiz_sent_ips') || '[]');
+
+        if (!sentIPs.includes(ip)) {
+          sentIPs.push(ip);
+          localStorage.setItem('quiz_sent_ips', JSON.stringify(sentIPs));
+
+          await fetch(webhookURL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              page: 'quiz',
+              date: new Date().toISOString(),
+              ip: ip,
+              userAgent: navigator.userAgent
+            })
+          });
+        }
+
+        counterEl.textContent = 'Accessi stimati globali: ' + sentIPs.length;
+      } catch (err) {
+        console.error('Errore tracciamento accessi:', err);
+        counterEl.textContent = 'Impossibile stimare accessi';
+      }
+    });
+  </script>
+
 </body>
 </html>
