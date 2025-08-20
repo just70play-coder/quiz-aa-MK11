@@ -2,6 +2,670 @@
 //nuovo blocco 
 const questions = [
 
+
+
+//nuovo blocco A_A4_Copyright_glossario
+
+{question: "Chi è l'autore di un'opera?", answers: [
+{text: "La persona fisica che crea l'opera", correct: true},
+{text: "Chi detiene i diritti economici ma non ha creato l'opera", correct: false},
+{text: "Chi utilizza l'opera per fini didattici", correct: false},
+{text: "Un ente come la SIAE", correct: false}
+]},
+
+{question: "Cosa indica il copyright?", answers: [
+{text: "Il diritto esclusivo dell'autore su una sua opera originale", correct: true},
+{text: "La possibilità di modificare liberamente opere altrui", correct: false},
+{text: "Il diritto di usare marchi registrati senza autorizzazione", correct: false},
+{text: "Una licenza pubblica senza limitazioni", correct: false}
+]},
+
+{question: "Cosa caratterizza il sistema del common law?", answers: [
+{text: "Si concentra sulla tutela economica delle opere nei paesi anglosassoni", correct: true},
+{text: "Garantisce automaticamente diritti morali agli autori", correct: false},
+{text: "È identico al diritto d'autore italiano", correct: false},
+{text: "Non prevede alcuna protezione per le opere digitali", correct: false}
+]},
+
+{question: "Che cosa è Creative Commons?", answers: [
+{text: "Un'organizzazione che offre licenze gratuite per condividere opere creative", correct: true},
+{text: "Un ente governativo che registra opere protette", correct: false},
+{text: "Una forma di copyright americana obbligatoria", correct: false},
+{text: "Un software per proteggere contenuti digitali", correct: false}
+]},
+
+{question: "Cosa significa diffusione di un'opera?", answers: [
+{text: "Rendere disponibile l'opera al pubblico attraverso vari mezzi", correct: true},
+{text: "Copiare l'opera per uso personale senza scopo commerciale", correct: false},
+{text: "Rimuovere l'opera dal mercato", correct: false},
+{text: "Modificare l'opera senza autorizzazione", correct: false}
+]},
+
+{question: "Cosa si intende per diritto d'autore in senso stretto?", answers: [
+{text: "Il complesso dei diritti dell'autore, morali e patrimoniali", correct: true},
+{text: "Il solo diritto di vendere copie dell'opera", correct: false},
+{text: "Il diritto di terzi a usare liberamente l'opera", correct: false},
+{text: "Una licenza che consente modifiche senza permesso", correct: false}
+]},
+
+{question: "Cosa tutela il diritto d'autore?", answers: [
+{text: "Protegge l'autore da utilizzi non autorizzati della sua opera", correct: true},
+{text: "Permette a chiunque di sfruttare economicamente l'opera", correct: false},
+{text: "Rende obbligatoria la registrazione presso la SIAE", correct: false},
+{text: "Autorizza la copia libera per fini educativi", correct: false}
+]},
+
+{question: "Cosa sono i diritti economici?", answers: [
+{text: "Diritti patrimoniali che consentono di sfruttare l'opera a fini commerciali", correct: true},
+{text: "Diritti di rivendicare la paternità dell'opera", correct: false},
+{text: "Diritti di modificare opere di altri autori", correct: false},
+{text: "Diritti di accedere gratuitamente a opere digitali", correct: false}
+]},
+
+{question: "Cosa tutela il diritto morale dell'autore?", answers: [
+{text: "La paternità dell'opera e l'opposizione a modifiche che ne alterino il contenuto", correct: true},
+{text: "La possibilità di vendere copie dell'opera", correct: false},
+{text: "La distribuzione dell'opera a terzi senza autorizzazione", correct: false},
+{text: "L'utilizzo dell'opera a scopi commerciali da parte di chiunque", correct: false}
+]},
+
+{question: "Cosa consente il diritto patrimoniale?", answers: [
+{text: "Trarre un beneficio economico dall'opera tramite vendita o licenze", correct: true},
+{text: "Impedire modifiche all'opera senza motivazione", correct: false},
+{text: "Proteggere l'opera solo in ambito educativo", correct: false},
+{text: "Condividere l'opera liberamente online", correct: false}
+]},
+
+{question: "Che cosa è un'eccezione obbligatoria al diritto d'autore?", answers: [
+{text: "Uso specifico di opere protette senza autorizzazione, secondo la legge", correct: true},
+{text: "Uso illimitato dell'opera da parte di chiunque", correct: false},
+{text: "Autorizzazione automatica della SIAE per la distribuzione", correct: false},
+{text: "Permesso di modificare e rivendere l'opera liberamente", correct: false}
+]},
+
+{question: "Cosa indica l'esclusiva?", answers: [
+{text: "Il diritto esclusivo del titolare di controllare l'uso della propria opera", correct: true},
+{text: "La possibilità di chiunque di riprodurre l'opera", correct: false},
+{text: "L'uso dell'opera per scopi educativi senza autorizzazione", correct: false},
+{text: "Un tipo di licenza Creative Commons", correct: false}
+]},
+
+{question: "Quando è possibile il fair use/fair dealing?", answers: [
+{text: "Per scopi di critica, recensione, insegnamento o ricerca senza violare il copyright", correct: true},
+{text: "Per vendere copie dell'opera senza autorizzazione", correct: false},
+{text: "Per modificare un'opera e pubblicarla come propria", correct: false},
+{text: "Per distribuire l'opera a scopo commerciale senza permesso", correct: false}
+]},
+
+{question: "Quale legge tutela il diritto d'autore in Italia?", answers: [
+{text: "Legge 22 aprile 1941, n. 633", correct: true},
+{text: "Legge sul copyright internazionale", correct: false},
+{text: "Costituzione italiana, articolo 33", correct: false},
+{text: "Legge sulle licenze Creative Commons", correct: false}
+]},
+
+{question: "Che cosa è una licenza?", answers: [
+{text: "Un accordo che consente l'uso di un'opera protetta a determinate condizioni", correct: true},
+{text: "Il trasferimento obbligatorio di tutti i diritti economici", correct: false},
+{text: "Un documento che autorizza modifiche illimitate", correct: false},
+{text: "Un simbolo che indica protezione dell'opera", correct: false}
+]},
+
+{question: "Che cosa permettono le licenze Creative Commons?", answers: [
+{text: "Concedere permessi di utilizzo, condivisione e modifiche mantenendo il diritto d'autore", correct: true},
+{text: "Rimuovere i diritti morali dell'autore", correct: false},
+{text: "Trasferire la proprietà dell'opera a terzi", correct: false},
+{text: "Autorizzare solo l'uso commerciale dell'opera", correct: false}
+]},
+
+{question: "Cosa si intende per opera dell'ingegno?", answers: [
+{text: "Qualsiasi creazione intellettuale, come libro, canzone, dipinto o software", correct: true},
+{text: "Solo opere letterarie e musicali", correct: false},
+{text: "Oggetti industriali brevettati", correct: false},
+{text: "Programmi informatici non protetti", correct: false}
+]},
+
+{question: "Cosa sono le opere protette?", answers: [
+{text: "Creazioni dell'ingegno coperte dal diritto d'autore", correct: true},
+{text: "Solo opere distribuite tramite SIAE", correct: false},
+{text: "Materiale didattico in pubblico dominio", correct: false},
+{text: "Contenuti esclusivamente digitali", correct: false}
+]},
+
+{question: "Cosa significa originalità?", answers: [
+{text: "Qualità di essere unico, nuovo e non una copia di qualcosa già esistente", correct: true},
+{text: "Essere approvato dalla SIAE", correct: false},
+{text: "Riprodurre fedelmente opere celebri", correct: false},
+{text: "Avere un alto valore commerciale", correct: false}
+]},
+
+{question: "Cosa indica la protezione automatica?", answers: [
+{text: "Il diritto d'autore nasce alla creazione dell'opera senza formalità", correct: true},
+{text: "Occorre registrare l'opera per ottenere diritti", correct: false},
+{text: "La SIAE garantisce automaticamente la protezione", correct: false},
+{text: "L'opera può essere usata liberamente", correct: false}
+]},
+
+{question: "Cosa significa riproduzione di un'opera?", answers: [
+{text: "Creare copie dell'opera su qualsiasi supporto", correct: true},
+{text: "Distribuire l'opera senza autorizzazione", correct: false},
+{text: "Modificare l'opera per nuovi scopi", correct: false},
+{text: "Rendere l'opera accessibile solo a uso personale", correct: false}
+]},
+
+{question: "Cosa indica il simbolo ©?", answers: [
+{text: "Protezione del copyright dell'opera e paternità dell'autore", correct: true},
+{text: "Autorizzazione all'uso gratuito dell'opera", correct: false},
+{text: "Licenza Creative Commons obbligatoria", correct: false},
+{text: "Brevetto industriale dell'opera", correct: false}
+]},
+
+{question: "Che cos'è il pubblico dominio?", answers: [
+{text: "Opere non più protette dal diritto d'autore e liberamente utilizzabili", correct: true},
+{text: "Opere registrate presso la SIAE", correct: false},
+{text: "Opere coperte da licenza Creative Commons", correct: false},
+{text: "Opere esclusivamente digitali", correct: false}
+]},
+
+{question: "Che cos'è la tutela giuridica?", answers: [
+{text: "L'insieme degli strumenti legali per difendere i diritti d'autore", correct: true},
+{text: "Un marchio di fabbrica", correct: false},
+{text: "Una licenza per uso educativo", correct: false},
+{text: "Una protezione automatica senza sanzioni legali", correct: false}
+]},
+
+		//nuovo bloccoA_A4_sviluppare_caso
+{question: "Quale strumento viene utilizzato per creare i modelli delle richieste di intervento?", 
+   answers: [
+    { text: "Microsoft Word con modello .dotx condiviso su cloud", correct: true }, 
+    { text: "Un foglio Excel strutturato con campi da compilare", correct: false },
+    { text: "PowerPoint con template preimpostati da inviare al DSGA", correct: false },
+    { text: "Software di gestione documentale senza modelli predefiniti", correct: false }
+   ]},
+
+{question: "Cosa distingue la prima posizione economica nella gestione dei modelli?", 
+   answers: [
+    { text: "Utilizza facsimili forniti dal DSGA e verifica coerenza e formattazione prima della condivisione", correct: true }, 
+    { text: "Adatta i modelli in base alle proprie preferenze senza linee guida", correct: false },
+    { text: "Si concentra su dettagli grafici più che sul contenuto", correct: false },
+    { text: "Archivia i modelli in cartelle personali senza coinvolgere il DSGA", correct: false }
+   ]},
+
+{question: "Qual è la differenza principale della seconda posizione economica rispetto alla prima?", 
+   answers: [
+    { text: "Crea autonomamente il modello, cura la cartella condivisa, versione del file e guida sintetica all'uso", correct: true }, 
+    { text: "Inserisce i campi segnaposto e aggiorna il file quando richiesto dal DSGA", correct: false },
+    { text: "Si occupa solo della parte grafica e del layout del documento", correct: false },
+    { text: "Distribuisce il modello senza verificare versioni o modalità di conservazione digitale", correct: false }
+   ]},
+
+{question: "Quali sono le fasi principali dell'attività di creazione dei modelli?", 
+   answers: [
+    { text: "Analisi dei requisiti, creazione del modello in Word, salvataggio in .dotx e condivisione", correct: true }, 
+    { text: "Preparazione di bozze cartacee, revisione e approvazione da parte del DSGA", correct: false },
+    { text: "Creazione di grafici di supporto e invio tramite email ai colleghi", correct: false },
+    { text: "Sviluppo di un software per gestire le richieste senza utilizzare modelli Word", correct: false }
+   ]},
+
+{question: "Quale ruolo ha l’assistente nella prima posizione economica durante la fase di creazione del modello?", 
+   answers: [
+    { text: "Segue il facsimile fornito, inserisce segnaposto e sottopone al DSGA per approvazione", correct: true }, 
+    { text: "Modifica il modello senza confrontarsi con il DSGA, basandosi su abitudini personali", correct: false },
+    { text: "Distribuisce il modello immediatamente senza verifica dei contenuti", correct: false },
+    { text: "Si concentra principalmente sull’aspetto grafico ignorando i contenuti testuali", correct: false }
+   ]},
+
+{question: "Cosa fa il personale nella seconda posizione economica riguardo alla guida all’uso del modello?", 
+   answers: [
+    { text: "Redige una breve guida indicando quando e come utilizzare il modello e come conservarne copia", correct: true }, 
+    { text: "Prepara note interne generiche senza riferimenti pratici all’uso del modello", correct: false },
+    { text: "Distribuisce informazioni dettagliate solo verbalmente ai colleghi", correct: false },
+    { text: "Compila guide molto lunghe e complesse che rischiano di confondere", correct: false }
+   ]},
+
+
+		//nuovo blocco A_A4_Sviluppare_slide
+{question: "Perché i contenuti digitali sono parte integrante del lavoro ATA?", 
+   answers: [
+    { text: "Perché supportano le attività amministrative e didattiche in modo organizzato", correct: true }, 
+    { text: "Perché permettono di fare grafica avanzata come nei programmi di design", correct: false },
+    { text: "Perché sostituiscono completamente la documentazione cartacea", correct: false },
+    { text: "Perché eliminano la necessità di coordinarsi con docenti e famiglie", correct: false }
+   ]},
+
+{question: "Qual è il vantaggio di puntare sulla qualità dei contenuti digitali?", 
+   answers: [
+    { text: "Riduce il tempo perso e migliora l'efficacia delle comunicazioni", correct: true }, 
+    { text: "Garantisce che tutti i documenti siano approvati automaticamente", correct: false },
+    { text: "Permette di creare contenuti visivamente più belli a scapito della chiarezza", correct: false },
+    { text: "Evita completamente la necessità di controlli da parte dei dirigenti", correct: false }
+   ]},
+
+{question: "Come contribuiscono i contenuti digitali all'immagine professionale dell'ATA?", 
+   answers: [
+    { text: "Rendono i documenti coerenti, chiari e curati, migliorando la percezione del lavoro", correct: true }, 
+    { text: "Aumentano la quantità di materiale prodotto indipendentemente dalla qualità", correct: false },
+    { text: "Consentono di creare contenuti esclusivamente decorativi per il sito web", correct: false },
+    { text: "Riducono la necessità di collaborare con i colleghi", correct: false }
+   ]},
+
+{question: "Perché rispettare le norme nei contenuti digitali è importante?", 
+   answers: [
+    { text: "Per garantire accessibilità, leggibilità e conformità ai regolamenti", correct: true }, 
+    { text: "Per velocizzare la pubblicazione anche se non tutti possono leggere il contenuto", correct: false },
+    { text: "Per avere documenti più colorati e creativi", correct: false },
+    { text: "Per sostituire il lavoro dei docenti nella didattica", correct: false }
+   ]},
+
+{question: "Come i contenuti digitali offrono supporto alla comunità scolastica?", 
+   answers: [
+    { text: "Fornendo informazioni organizzate, chiare e facilmente consultabili da tutti", correct: true }, 
+    { text: "Consentendo solo la comunicazione con la segreteria senza coinvolgere docenti e famiglie", correct: false },
+    { text: "Generando contenuti creativi a scopo promozionale più che informativo", correct: false },
+    { text: "Eliminando la necessità di aggiornare o archiviare documenti", correct: false }
+   ]},
+
+{question: "Perché è utile che l'ATA si formi e aggiorni continuamente?", 
+   answers: [
+    { text: "Per migliorare competenze, efficienza e qualità del lavoro nel tempo", correct: true }, 
+    { text: "Perché rende obsoleti i colleghi meno aggiornati", correct: false },
+    { text: "Per permettere di delegare completamente il lavoro agli studenti", correct: false },
+    { text: "Perché evita di usare strumenti digitali quotidianamente", correct: false }
+   ]},
+
+{question: "Qual è l'effetto di contenuti digitali di qualità sul tempo di lavoro?", 
+   answers: [
+    { text: "Permettono di risparmiare tempo evitando revisioni e correzioni continue", correct: true }, 
+    { text: "Garantiscono che tutte le attività siano automatiche senza controllo umano", correct: false },
+    { text: "Consentono di produrre più documenti a scapito della chiarezza", correct: false },
+    { text: "Riducono la necessità di coordinamento con i dirigenti", correct: false }
+   ]},
+
+{question: "Quale funzione dell'IA può aiutare a migliorare lo stile e la grammatica dei testi?", 
+   answers: [
+    { text: "Correggere testi", correct: true }, 
+    { text: "Creare presentazioni PowerPoint", correct: false },
+    { text: "Archiviare documenti cartacei", correct: false },
+    { text: "Inviare circolari automaticamente", correct: false }
+   ]},
+
+{question: "Quale funzione dell'IA può produrre bozze rapide di documenti o comunicazioni?", 
+   answers: [
+    { text: "Generare bozze", correct: true }, 
+    { text: "Disegnare infografiche con Canva", correct: false },
+    { text: "Compilare moduli cartacei", correct: false },
+    { text: "Organizzare file locali", correct: false }
+   ]},
+
+{question: "Quale funzione dell'IA consente di creare riassunti chiari e sintetici di testi lunghi?", 
+   answers: [
+    { text: "Sintetizzare documenti", correct: true }, 
+    { text: "Creare video clip", correct: false },
+    { text: "Stampare documenti PDF", correct: false },
+    { text: "Inviare email automatiche", correct: false }
+   ]},
+
+{question: "Quale funzione dell'IA permette di generare immagini digitali da descrizioni testuali?", 
+   answers: [
+    { text: "Generare immagini", correct: true }, 
+    { text: "Creare grafici in Excel", correct: false },
+    { text: "Gestire cartelle condivise", correct: false },
+    { text: "Scrivere note amministrative", correct: false }
+   ]},
+
+{question: "Quando si utilizza l'IA per contenuti digitali, cosa è fondamentale fare sempre?", 
+   answers: [
+    { text: "Verificare e validare i risultati con attenzione", correct: true }, 
+    { text: "Affidarsi completamente all'IA senza controlli", correct: false },
+    { text: "Ignorare le linee guida di accessibilità", correct: false },
+    { text: "Usare solo formati non modificabili", correct: false }
+   ]},
+
+{question: "Quale di questi strumenti è utile per la creazione di video?",
+ answers: [
+  { text: "Clipchamp", correct: true },
+  { text: "Canva", correct: false },
+  { text: "Word", correct: false },
+  { text: "Excel", correct: false }
+]},
+
+{question: "Quale strumento è utile per creare grafica digitale?", answers: [
+{text: "Canva", correct: true},
+{text: "Adobe Express", correct: false},
+{text: "PowerPoint", correct: false},
+{text: "Genially", correct: false},
+]},
+
+{question: "Quale applicativo è indicato per creare testi e documenti?", answers: [
+{text: "Word", correct: true},
+{text: "Google Docs", correct: false},
+{text: "Excel", correct: false},
+{text: "Forms", correct: false},
+]},
+
+{question: "Quale strumento serve per creare e gestire tabelle?", answers: [
+{text: "Excel", correct: true},
+{text: "Sheets", correct: false},
+{text: "Word", correct: false},
+{text: "PowerPoint", correct: false},
+]},
+
+{question: "Quale applicativo consente di raccogliere dati tramite moduli?", answers: [
+{text: "Forms", correct: true},
+{text: "Sheets", correct: false},
+{text: "Google Docs", correct: false},
+{text: "Excel", correct: false},
+]},
+
+{question: "Quale strumento è indicato per realizzare presentazioni tradizionali?", answers: [
+{text: "PowerPoint", correct: true},
+{text: "Genially", correct: false},
+{text: "Canva", correct: false},
+{text: "Clipchamp", correct: false},
+]},
+
+{question: "Quale applicativo permette di realizzare presentazioni interattive?", answers: [
+{text: "Genially", correct: true},
+{text: "PowerPoint", correct: false},
+{text: "Canva", correct: false},
+{text: "Adobe Express", correct: false},
+]},
+
+{question: "Perché un verbale scannerizzato come immagine può essere problematico?", answers: [
+{text: "Non è ricercabile digitalmente", correct: true},
+{text: "Occupa meno spazio sul cloud", correct: false},
+{text: "Si aggiorna automaticamente", correct: false},
+{text: "Non richiede approvazione del dirigente", correct: false},
+]},
+
+{question: "Cosa rende problematico un modulo con font decorativo o colori chiari?", answers: [
+{text: "Rende difficile la lettura e la compilazione", correct: true},
+{text: "Garantisce maggiore creatività nel documento", correct: false},
+{text: "Rende il modulo automaticamente accessibile", correct: false},
+{text: "Elimina la necessità di istruzioni chiare", correct: false},
+]},
+
+{question: "Qual è un errore comune nelle circolari digitali?", answers: [
+{text: "Frasi vaghe e punteggiatura errata", correct: true},
+{text: "Uso di titoli chiari e sezioni strutturate", correct: false},
+{text: "Indicazioni precise e dettagliate", correct: false},
+{text: "Formattazione coerente con lo stile istituzionale", correct: false},
+]},
+
+{question: "Cosa rende una guida tecnica digitale poco efficace?", answers: [
+{text: "Mancanza di titoli o struttura chiara", correct: true},
+{text: "Integrazione di immagini e diagrammi esplicativi", correct: false},
+{text: "Sezioni ben organizzate con istruzioni passo passo", correct: false},
+{text: "Uso coerente di stili e formati istituzionali", correct: false},
+]},
+
+{question: "Perché una comunicazione ai genitori può risultare problematica?", answers: [
+{text: "Se è troppo burocratica e poco chiara", correct: true},
+{text: "Se contiene istruzioni precise e dirette", correct: false},
+{text: "Se utilizza esempi pratici e concreti", correct: false},
+{text: "Se è breve e facilmente leggibile", correct: false},
+]},
+
+{question: "Qual è uno dei principali vantaggi dell'uso dei modelli?", answers: [
+{text: "Fanno risparmiare tempo evitando di riscrivere ogni volta da zero", correct: true},
+{text: "Consentono di evitare completamente l'uso di software informatici", correct: false},
+{text: "Sostituiscono tutte le verifiche sui dati inseriti", correct: false},
+{text: "Permettono di eliminare qualsiasi revisione dei colleghi", correct: false},
+]},
+
+{question: "Cosa assicurano i modelli nella produzione dei documenti?", answers: [
+{text: "Uniformità e coerenza nello stile e nel formato", correct: true},
+{text: "Creatività illimitata senza linee guida", correct: false},
+{text: "Libertà di ignorare le norme interne", correct: false},
+{text: "Eliminazione del bisogno di controllo dei contenuti", correct: false},
+]},
+
+{question: "Qual è uno degli effetti principali dei modelli sulla qualità?", answers: [
+{text: "Riducono gli errori formali e migliorano la qualità complessiva", correct: true},
+{text: "Riducono la necessità di formazione del personale", correct: false},
+{text: "Eliminano la necessità di approvazione dei dirigenti", correct: false},
+{text: "Consentono di ignorare le regole di sicurezza dei dati", correct: false},
+]},
+
+{question: "Quale buona pratica riguarda l’archiviazione dei modelli?", answers: [
+{text: "Archiviare i modelli in una cartella condivisa", correct: true},
+{text: "Salvare i modelli solo sul desktop del proprio computer", correct: false},
+{text: "Stampare i modelli e non conservarne copie digitali", correct: false},
+{text: "Inviare i modelli ai colleghi senza tracciarne l'uso", correct: false},
+]},
+
+{question: "Cosa dovrebbe includere un modello per essere efficace?", answers: [
+{text: "Istruzioni chiare su cosa compilare o modificare", correct: true},
+{text: "Solo testo predefinito senza alcuna indicazione", correct: false},
+{text: "Solo immagini e grafica senza spiegazioni", correct: false},
+{text: "Informazioni obsolete senza aggiornamenti", correct: false},
+]},
+
+{question: "Come si mantiene un modello aggiornato?", answers: [
+{text: "Aggiornandolo periodicamente per rispettare norme e stile istituzionale", correct: true},
+{text: "Usandolo una sola volta e poi scartandolo", correct: false},
+{text: "Ignorando eventuali cambiamenti nelle procedure interne", correct: false},
+{text: "Convertendolo in PDF ogni volta senza controllare il contenuto", correct: false},
+]},
+
+{question: "Qual è il formato preferibile per i modelli?", answers: [
+{text: "Modificabile e accessibile, come Word o Excel", correct: true},
+{text: "Solo in PDF non modificabile", correct: false},
+{text: "Formato immagine per garantire sicurezza", correct: false},
+{text: "Formati casuali senza alcun criterio", correct: false},
+]},
+
+
+					//nuovo blocco  A_A4_Sviluppare_glossario
+{question: "Cosa si intende per contenuto digitale?", answers: [
+ { text: "Ogni materiale prodotto, modificato o condiviso in formato elettronico, come testi, tabelle, infografiche, video, audio o moduli", correct: true },
+ { text: "Qualsiasi documento elettronico creato o trasmesso in modalità digitale, indipendentemente dal formato o dal contenuto", correct: false },
+ { text: "Materiali informativi convertiti in formato elettronico senza limitazioni di tipologia o scopo", correct: false },
+ { text: "File digitali prodotti o condivisi online che contengono testi, immagini, audio o altre rappresentazioni informative", correct: false }
+ ]},
+{question: "Cosa significa fruibilità di un contenuto digitale?", answers: [
+ { text: "Capacità di un contenuto di essere facilmente compreso e consultato anche da utenti con bassa alfabetizzazione digitale", correct: true },
+ { text: "Facilità di consultazione e comprensione dei contenuti digitali anche da utenti con competenze tecniche limitate", correct: false },
+ { text: "Possibilità di utilizzare i contenuti senza difficoltà, indipendentemente dal dispositivo o dal livello di conoscenza digitale", correct: false },
+ { text: "Accessibilità dei contenuti in modo chiaro e immediato per chiunque debba consultarli, anche senza esperienza informatica", correct: false }
+ ]},
+{question: "Cosa indica l'accessibilità di un contenuto digitale?", answers: [
+ { text: "Caratteristica dei contenuti digitali di essere utilizzabili anche da persone con disabilità, in conformità alle normative", correct: true },
+ { text: "Capacità dei contenuti digitali di essere facilmente fruiti anche da persone con differenti abilità sensoriali o cognitive", correct: false },
+ { text: "Possibilità di utilizzare il contenuto da chiunque, rispettando criteri di leggibilità, contrasto e compatibilità tecnologica", correct: false },
+ { text: "Attenzione alla progettazione dei contenuti in modo che siano comprensibili e accessibili a un pubblico con esigenze speciali", correct: false }
+ ]},
+{question: "Cosa significa coerenza di un contenuto digitale?", answers: [
+ { text: "Aderenza del contenuto agli standard di stile, linguaggio e formato istituzionale della scuola", correct: true },
+ { text: "Uniformità nella presentazione dei contenuti rispetto alle regole grafiche, stilistiche e linguistiche della scuola", correct: false },
+ { text: "Conformità dei materiali digitali agli standard ufficiali di comunicazione e formato adottati dall’istituzione scolastica", correct: false },
+ { text: "Rispetto delle linee guida per stile, linguaggio e organizzazione dei contenuti in tutti i documenti digitali della scuola", correct: false }
+ ]},
+{question: "Cosa si intende per modello (template)?", answers: [
+ { text: "Documento preimpostato con struttura e formattazione standard, utile per creare contenuti omogenei e ridurre errori", correct: true },
+ { text: "Documento digitale già strutturato con formattazione predefinita per facilitare la produzione di contenuti coerenti", correct: false },
+ { text: "Struttura preimpostata che consente di creare rapidamente documenti uniformi rispettando le linee guida della scuola", correct: false },
+ { text: "Formato standardizzato di documento che guida la compilazione corretta dei contenuti digitali senza errori", correct: false }
+ ]},
+{question: "Cos'è il formato PDF/A?", answers: [
+ { text: "Formato di file PDF pensato per la conservazione a lungo termine, che garantisce integrità e leggibilità dei documenti nel tempo", correct: true },
+ { text: "Versione di PDF ottimizzata per archiviazione duratura, assicurando la conservazione fedele dei contenuti nel tempo", correct: false },
+ { text: "Formato PDF specifico per la conservazione elettronica a lungo termine con garanzia di leggibilità futura", correct: false },
+ { text: "Tipo di PDF creato per preservare i documenti inalterati nel tempo e compatibile con gli standard archivistici", correct: false }
+ ]},
+{question: "Cosa si intende per versionamento di un documento?", answers: [
+ { text: "Procedura che consente di distinguere diverse versioni dello stesso documento, evitando sovrapposizioni e confusione", correct: true },
+ { text: "Sistema di gestione che permette di registrare e riconoscere ogni modifica apportata a un documento digitale nel tempo", correct: false },
+ { text: "Metodo che traccia le revisioni successive di un file per mantenere ordine e chiarezza tra le versioni", correct: false },
+ { text: "Tecnica per organizzare e conservare le diverse edizioni di un documento evitando duplicazioni o errori", correct: false }
+ ]},
+{question: "Cosa significa cloud nel contesto dei contenuti digitali?", answers: [
+ { text: "Spazio di archiviazione online che consente la condivisione, l’aggiornamento e la collaborazione in tempo reale su documenti", correct: true },
+ { text: "Ambiente digitale remoto che permette di salvare, modificare e condividere file con accesso simultaneo di più utenti", correct: false },
+ { text: "Servizio di archiviazione online che consente di lavorare collaborativamente su documenti e aggiornare i contenuti in tempo reale", correct: false },
+ { text: "Infrastruttura virtuale per conservare e gestire documenti digitali con possibilità di collaborazione e sincronizzazione", correct: false }
+ ]},
+{question: "Cosa indica un segnaposto in un modello digitale?", answers: [
+ { text: "Elemento testuale inserito nei modelli per indicare le parti da compilare, come <<Inserire nome docente>>", correct: true },
+ { text: "Testo segnaposto che guida l’utente su quali informazioni inserire in un documento preformattato", correct: false },
+ { text: "Indicazione di campi da completare nei modelli digitali, utile per facilitare la compilazione corretta dei contenuti", correct: false },
+ { text: "Elemento del documento che serve a marcare le posizioni dove inserire dati specifici, evitando errori o omissioni", correct: false }
+ ]},
+{question: "Cosa si intende per Intelligenza Artificiale (IA) nei contenuti digitali?", answers: [
+ { text: "Tecnologie che simulano funzioni cognitive umane, come generare testi, sintetizzare documenti, revisionare linguaggio o creare contenuti multimediali complessi", correct: true },
+ { text: "Strumenti digitali in grado di imitare processi cognitivi umani per elaborare, creare o analizzare contenuti multimediali complessi", correct: false },
+ { text: "Tecnologie che applicano capacità di ragionamento e apprendimento automatico per produrre testi, sintesi o materiali digitali", correct: false },
+ { text: "Sistemi intelligenti capaci di comprendere, generare e adattare contenuti digitali in maniera simile al ragionamento umano", correct: false }
+ ]},
+
+			//nuovo blocco A_A4_Collaborare_Caso applicato
+
+{question: "Quali strumenti utilizzano gli Assistenti Amministrativi per collaborare nella realizzazione di un progetto di istruzione domiciliare?", 
+ answers: [
+  { text: "SIDI e il suo applicativo RESO", correct: true },
+  { text: "Applicativi interni per gestione documentale e comunicazione tra uffici", correct: false },
+  { text: "Piattaforme di gestione del PTOF e delle attività didattiche", correct: false },
+  { text: "Software per la rendicontazione e reportistica scolastica", correct: false }
+ ]},
+{question: "In cosa consiste la collaborazione degli Assistenti Amministrativi di prima posizione economica?", 
+ answers: [
+  { text: "Acquisizione domanda e certificazioni, nomina dei docenti e relazioni con la Scuola Polo", correct: true },
+  { text: "Gestione del registro elettronico e predisposizione documentazione finanziaria", correct: false },
+  { text: "Coordinamento interno delle fasi del progetto e comunicazioni con uffici esterni", correct: false },
+  { text: "Supporto organizzativo per la programmazione delle attività didattiche", correct: false }
+ ]},
+{question: "Quali sono le principali responsabilità degli Assistenti Amministrativi di seconda posizione economica?", 
+ answers: [
+  { text: "Gestione dell’applicativo RESO, personalizzazione del registro elettronico e predisposizione documentazione finanziaria", correct: true },
+  { text: "Acquisizione domande e certificazioni dalle famiglie", correct: false },
+  { text: "Nomina dei docenti e gestione avvisi interni", correct: false },
+  { text: "Coordinamento delle attività amministrative e verifica della rendicontazione", correct: false }
+ ]},
+{question: "Qual è la sequenza delle attività per gli Assistenti di prima posizione economica?", 
+ answers: [
+  { text: "Acquisizione richieste e certificazioni, inserimento nel PTOF, gestione avvisi e nomine, relazioni con la Scuola Polo", correct: true },
+  { text: "Gestione RESO e documentazione finanziaria", correct: false },
+  { text: "Coordinamento delle attività didattiche e supporto alla programmazione educativa", correct: false },
+  { text: "Interfaccia con enti esterni per approvazioni e comunicazioni", correct: false }
+ ]},
+{question: "Quali attività svolgono gli Assistenti di seconda posizione economica?", 
+ answers: [
+  { text: "Gestione applicativo RESO e predisposizione documentazione finanziaria e contabile per rendicontazione", correct: true },
+  { text: "Gestione avvisi e nomine dei docenti", correct: false },
+  { text: "Verifica dati e reportistica delle attività svolte", correct: false },
+  { text: "Coordinamento interno per garantire corrette procedure amministrative", correct: false }
+ ]},
+{question:"Quando può essere richiesta l’attivazione dell’istruzione domiciliare?", answers:[
+{text:"Solo all’inizio dell’anno scolastico", correct:false},
+{text:"In qualunque momento dell’anno", correct:true},
+{text:"Solo durante il periodo di sospensione delle lezioni", correct:false},
+{text:"Solo dopo approvazione del Dirigente Scolastico", correct:false}
+]},
+{question:"Quale documentazione deve accompagnare la richiesta di istruzione domiciliare?", answers:[
+{text:"Una certificazione medica che attesti la necessità di terapie domiciliari", correct:true},
+{text:"Un’autocertificazione del genitore", correct:false},
+{text:"Un nulla osta del Consiglio di Istituto", correct:false},
+{text:"Una dichiarazione rilasciata dall’ASL competente", correct:false}
+]},
+{question:"Chi coordina la predisposizione del progetto di istruzione domiciliare?", answers:[
+{text:"Il Dirigente Scolastico in collaborazione con la Scuola Polo Regionale", correct:true},
+{text:"Solo il Dirigente Scolastico", correct:false},
+{text:"I genitori dell’alunno", correct:false},
+{text:"Il consiglio di classe", correct:false}
+]},
+{question:"Cosa devono fare gli Assistenti Amministrativi per supportare l’istruzione domiciliare?", answers:[
+{text:"Gestire la documentazione e le risorse economiche tramite applicativi informatici", correct:true},
+{text:"Preparare lezioni e materiali didattici", correct:false},
+{text:"Valutare i risultati degli studenti", correct:false},
+{text:"Effettuare controlli sanitari domiciliari", correct:false}
+]},
+{question:"Come vengono individuati gli insegnanti per l’istruzione domiciliare?", answers:[
+{text:"Prima all’interno della scuola, poi eventualmente con avviso esterno", correct:true},
+{text:"Solo tramite avviso pubblico nazionale", correct:false},
+{text:"Solo tra il personale interno alla scuola", correct:false},
+{text:"In base alla preferenza dell’alunno", correct:false}
+]},
+{question:"Come deve essere rendicontata l’attività di istruzione domiciliare?", answers:[
+{text:"Sia sotto il profilo didattico che finanziario", correct:true},
+{text:"Solo didattico, non è necessario il rendiconto economico", correct:false},
+{text:"Solo finanziario, senza dettagli delle attività svolte", correct:false},
+{text:"Non è necessaria alcuna rendicontazione", correct:false}
+]},
+{question: "In quali istituzioni scolastiche può rendersi necessario attivare un progetto di istruzione domiciliare?", answers: [
+ {text: "In quelle di ogni ordine e grado", correct: true},
+ {text: "Solo nelle scuole secondarie di secondo grado", correct: false},
+ {text: "Unicamente nelle scuole primarie", correct: false},
+ {text: "Esclusivamente negli istituti comprensivi", correct: false}
+]},
+{question: "Quale ruolo hanno gli Assistenti Amministrativi nella gestione di un progetto di istruzione domiciliare?", answers: [
+ {text: "Collaborano alla gestione documentale e finanziaria utilizzando applicativi informatici", correct: true},
+ {text: "Seguono esclusivamente gli aspetti didattici del progetto", correct: false},
+ {text: "Curano solo la comunicazione con le famiglie", correct: false},
+ {text: "Si occupano unicamente del registro elettronico", correct: false}
+]},
+{question: "Qual è uno degli obiettivi formativi legati all’istruzione domiciliare?", answers: [
+ {text: "Conoscere gli applicativi SIDI e RESO come strumenti di comunicazione collaborativa", correct: true},
+ {text: "Apprendere esclusivamente tecniche di insegnamento a distanza", correct: false},
+ {text: "Imparare a utilizzare software di grafica", correct: false},
+ {text: "Approfondire l’uso dei social media", correct: false}
+]},
+{question: "Quale conoscenza procedurale è richiesta per la realizzazione di un progetto di istruzione domiciliare?", answers: [
+ {text: "Le procedure per la realizzazione di un progetto di istruzione domiciliare", correct: true},
+ {text: "Le modalità di gestione delle supplenze", correct: false},
+ {text: "Le pratiche di iscrizione alle scuole", correct: false},
+ {text: "Le regole per l’adozione dei libri di testo", correct: false}
+]},
+{question: "In quale momento dell’anno può essere presentata al Dirigente Scolastico la richiesta di attivazione di istruzione domiciliare da parte della famiglia di un alunno?", answers: [
+ {text: "In qualunque momento dell’anno", correct: true},
+ {text: "Solo all’inizio dell’anno scolastico", correct: false},
+ {text: "Esclusivamente nel secondo quadrimestre", correct: false},
+ {text: "Unicamente durante il periodo delle iscrizioni", correct: false}
+]},
+
+			//nuovo blocco A-A4-collab-glossario
+{question: "Qual è il ruolo dell’AgID?", answers: [
+  { text: "Coordinare la trasformazione digitale della PA, emettere linee guida e redigere il Piano triennale per l’informatica nella PA", correct: true },
+  { text: "Gestire direttamente i server delle scuole e la loro sicurezza informatica", correct: false },
+  { text: "Occuparsi esclusivamente della formazione interna dei dipendenti pubblici", correct: false },
+  { text: "Controllare la spesa delle amministrazioni per l’acquisto di software privati", correct: false }
+]},
+{question: "A cosa serve un applicativo gestionale?", answers: [
+  { text: "Ottimizzare e automatizzare operazioni amministrative e processi complessi, come la gestione finanziaria scolastica", correct: true },
+  { text: "Archiviare esclusivamente file personali degli utenti senza protocollazione", correct: false },
+  { text: "Sostituire integralmente il registro elettronico e la piattaforma didattica", correct: false },
+  { text: "Gestire unicamente il calendario delle lezioni e delle riunioni", correct: false }
+]},
+{question: "Qual è il principale vantaggio del cloud computing?", answers: [
+  { text: "Consentire l’accesso remoto e condiviso a dati e applicazioni tramite credenziali, senza necessità di archiviazione locale", correct: true },
+  { text: "Garantire che tutti i dati vengano salvati solo su dispositivi fisici dell’utente", correct: false },
+  { text: "Evitare completamente l’uso di credenziali grazie a un accesso libero", correct: false },
+  { text: "Limitare l’uso di applicazioni a un solo utente per volta", correct: false }
+]},
+{question: "Cosa tutela il copyright?", answers: [
+  { text: "Il diritto dell’autore a impedire la riproduzione non autorizzata delle proprie opere dell’ingegno", correct: true },
+  { text: "L’uso libero di qualsiasi contenuto online purché a scopo didattico", correct: false },
+  { text: "Solo la diffusione commerciale di software open source", correct: false },
+  { text: "Il diritto esclusivo di utilizzo delle banche dati da parte degli editori", correct: false }
+]},
+{question: "Che cos’è un meeting virtuale?", answers: [
+  { text: "Una riunione online in tempo reale tramite piattaforme di videoconferenza come Teams, Meet o Webex", correct: true },
+  { text: "Un archivio digitale contenente registrazioni di riunioni passate", correct: false },
+  { text: "Una chat testuale asincrona usata dagli uffici scolastici", correct: false },
+  { text: "Un evento esclusivamente in presenza, supportato da strumenti digitali", correct: false }
+]},
+{question: "Cos’è il SIDI?", answers: [
+  { text: "Il Sistema Informativo dell’Istruzione che fornisce servizi e applicazioni alle scuole e agli uffici dell’amministrazione", correct: true },
+  { text: "Una piattaforma privata per la gestione dei corsi di aggiornamento dei docenti", correct: false },
+  { text: "Un software per la scrittura di documenti ufficiali ministeriali", correct: false },
+  { text: "Un portale dedicato esclusivamente alla gestione delle assenze degli studenti", correct: false }
+]},
+{question: "A cosa serve un word processor?", answers: [
+  { text: "Creare, modificare, salvare e stampare documenti di testo in formato digitale", correct: true },
+  { text: "Archiviare immagini e grafici senza possibilità di inserire testo", correct: false },
+  { text: "Gestire esclusivamente fogli di calcolo numerici", correct: false },
+  { text: "Tradurre automaticamente documenti da una lingua all’altra", correct: false }
+]},
+
 			//nuovo blocco A_A4_Interagire-Glossario
 {question: "Cos'è una circolare online?", answers: [
   { text: "Documento formale digitale per trasmettere disposizioni o informazioni a gruppi scolastici, veicolabile via email, registro elettronico o area riservata", correct: true },
