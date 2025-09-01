@@ -62,7 +62,7 @@
 
   <div id="results"></div>
 
-  <div id="access-counter">Accessi stimati globali: 0</div>
+  <div id="access-counter">Accessi globali registrati: 0</div>
 
   <p id="copyright">© 2025 EREMO. Tutti i diritti riservati. Vietata la riproduzione senza autorizzazione.</p>
 
@@ -78,30 +78,36 @@
         const res = await fetch('https://api.ipify.org?format=json');
         const { ip } = await res.json();
 
-        let sentIPs = JSON.parse(localStorage.getItem('quiz_sent_ips') || '[]');
+        // Invia dati allo script Google SEMPRE
+        const res2 = await fetch(webhookURL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            page: 'quiz',
+            date: new Date().toISOString(),
+            ip: ip,
+            userAgent: navigator.userAgent
+          })
+        });
+        const result = await res2.json();
 
+        if (result.status === 'ok') {
+          counterEl.textContent = 'Accessi globali registrati: ' + result.total;
+        } else {
+          counterEl.textContent = 'Errore nel conteggio accessi';
+        }
+
+        // Salva IP localmente come promemoria (non usato nel conteggio globale)
+        let sentIPs = JSON.parse(localStorage.getItem('quiz_sent_ips') || '[]');
         if (!sentIPs.includes(ip)) {
           sentIPs.push(ip);
           localStorage.setItem('quiz_sent_ips', JSON.stringify(sentIPs));
+        }
 
-          // Invia dati allo script Google
-         const res2 = await fetch(webhookURL, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    page: 'quiz',
-    date: new Date().toISOString(),
-    ip: ip,
-    userAgent: navigator.userAgent
-  })
-});
-const result = await res2.json();
-
-if (result.status === 'ok') {
-  counterEl.textContent = 'Accessi globali registrati: ' + result.total;
-} else {
-  counterEl.textContent = 'Errore nel conteggio accessi';
-}
+      } catch (err) {
+        console.error('Errore tracciamento accessi:', err);
+        counterEl.textContent = 'Impossibile stimare accessi';
+      }
     }
 
     window.addEventListener('DOMContentLoaded', trackAccess);
