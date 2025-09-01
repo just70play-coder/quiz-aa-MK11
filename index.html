@@ -14,11 +14,7 @@
       line-height: 1.6;
     }
 
-    h1 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-      text-align: center;
-    }
+    h1 { font-size: 1.5em; margin-bottom: 10px; text-align: center; }
 
     button {
       padding: 12px 20px;
@@ -36,40 +32,17 @@
       margin-right: auto;
     }
 
-    button:hover {
-      background-color: #1565c0;
-    }
+    button:hover { background-color: #1565c0; }
 
-    #info {
-      font-size: 1em;
-      margin-bottom: 15px;
-      text-align: center;
-    }
+    #info { font-size: 1em; margin-bottom: 15px; text-align: center; }
 
-    .question-block {
-      margin-bottom: 20px;
-      padding: 15px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-    }
-
+    .question-block { margin-bottom: 20px; padding: 15px; background-color: #fff; border: 1px solid #ccc; border-radius: 10px; }
     .correct { border-color: green; }
     .wrong { border-color: red; }
     .unanswered { border-color: gray; }
 
-    label {
-      display: block;
-      margin: 8px 0;
-      font-size: 1em;
-      padding: 8px;
-      border-radius: 5px;
-    }
-
-    input[type="radio"] {
-      margin-right: 8px;
-      transform: scale(1.2);
-    }
+    label { display: block; margin: 8px 0; font-size: 1em; padding: 8px; border-radius: 5px; }
+    input[type="radio"] { margin-right: 8px; transform: scale(1.2); }
 
     #timer { font-weight: bold; }
     #results { margin-top: 20px; font-size: 1.2em; text-align: center; }
@@ -96,13 +69,12 @@
   <script src="obfuscated.js"></script>
 
   <script>
-    const webhookURL = 'https://script.google.com/macros/s/AKfycbyxZdV08faEHecGNbFNwoOruGbtj8Lc_9TS6iAdDPtCEtw8RHFT9-GF2YCGBHgaIwsOyA/exec';
+    const webhookURL = 'https://script.google.com/macros/s/AKfycbwP0wU3aCMAGx3-_CSDzk8ggGUBn7tC-UctO_dyN9Kq4fQ7r9RTykDfjyEcCLsgAScPYw/exec';
 
-
-    window.addEventListener('DOMContentLoaded', async () => {
+    async function trackAccess() {
       const counterEl = document.getElementById('access-counter');
-
       try {
+        // Recupera IP reale lato client
         const res = await fetch('https://api.ipify.org?format=json');
         const { ip } = await res.json();
 
@@ -112,6 +84,7 @@
           sentIPs.push(ip);
           localStorage.setItem('quiz_sent_ips', JSON.stringify(sentIPs));
 
+          // Invia dati allo script Google
           await fetch(webhookURL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -129,7 +102,9 @@
         console.error('Errore tracciamento accessi:', err);
         counterEl.textContent = 'Impossibile stimare accessi';
       }
-    });
+    }
+
+    window.addEventListener('DOMContentLoaded', trackAccess);
   </script>
 
 </body>
