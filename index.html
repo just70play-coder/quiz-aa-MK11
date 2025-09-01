@@ -85,23 +85,23 @@
           localStorage.setItem('quiz_sent_ips', JSON.stringify(sentIPs));
 
           // Invia dati allo script Google
-          await fetch(webhookURL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              page: 'quiz',
-              date: new Date().toISOString(),
-              ip: ip,
-              userAgent: navigator.userAgent
-            })
-          });
-        }
+         const res2 = await fetch(webhookURL, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    page: 'quiz',
+    date: new Date().toISOString(),
+    ip: ip,
+    userAgent: navigator.userAgent
+  })
+});
+const result = await res2.json();
 
-        counterEl.textContent = 'Accessi stimati globali: ' + sentIPs.length;
-      } catch (err) {
-        console.error('Errore tracciamento accessi:', err);
-        counterEl.textContent = 'Impossibile stimare accessi';
-      }
+if (result.status === 'ok') {
+  counterEl.textContent = 'Accessi globali registrati: ' + result.total;
+} else {
+  counterEl.textContent = 'Errore nel conteggio accessi';
+}
     }
 
     window.addEventListener('DOMContentLoaded', trackAccess);
