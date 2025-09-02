@@ -69,50 +69,43 @@
   <script src="obfuscated.js"></script>
 
   <script>
-    const webhookURL = 'https://script.google.com/macros/s/AKfycbxKeWq4HGuzU2ZgDK56zBsh4mVl_uGSVxGXggZvYdueRFw5rBGoKCE3060ZH8-ilI2j/exec';
+  const webhookURL = 'https://script.google.com/macros/s/AKfycbzFNXknUsW_7AKYc85iZ0Le_Bf8uiwa-APvfckfO_yZaFxKxlXFlMVnG4BdlIuoGkk0SA/exec';
 
-    async function trackAccess() {
-      const counterEl = document.getElementById('access-counter');
-      try {
-        // Recupera IP reale lato client
-        const res = await fetch('https://api.ipify.org?format=json');
-        const { ip } = await res.json();
+  async function trackAccess() {
+    const counterEl = document.getElementById('access-counter');
+    try {
+      // User Agent (browser + OS)
+      const userAgent = navigator.userAgent;
 
-        // Invia dati allo script Google SEMPRE
-        const res2 = await fetch(webhookURL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            page: 'quiz',
-            date: new Date().toISOString(),
-            ip: ip,
-            userAgent: navigator.userAgent
-          })
-        });
-        const result = await res2.json();
+      // Timezone
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-        if (result.status === 'ok') {
-          counterEl.textContent = 'Accessi globali registrati: ' + result.total;
-        } else {
-          counterEl.textContent = 'Errore nel conteggio accessi';
-        }
+      // Device type (mobile/desktop)
+      const deviceType = /Mobi|Android/i.test(userAgent) ? "mobile" : "desktop";
 
-        // Salva IP localmente come promemoria (non usato nel conteggio globale)
-        let sentIPs = JSON.parse(localStorage.getItem('quiz_sent_ips') || '[]');
-        if (!sentIPs.includes(ip)) {
-          sentIPs.push(ip);
-          localStorage.setItem('quiz_sent_ips', JSON.stringify(sentIPs));
-        }
+      // Data/ora locale (client)
+      const localDate = new Date().toLocaleString();
 
-      } catch (err) {
-        console.error('Errore tracciamento accessi:', err);
+      // Invia parametri come querystring (evita CORS)
+      const url = `${webhookURL}?ua=${encodeURIComponent(userAgent)}&tz=${encodeURIComponent(timezone)}&dev=${deviceType}&date=${encodeURIComponent(localDate)}`;
+
+      const res = await fetch(url);
+      const result = await res.json();
+
+      if (result.status === 'ok') {
+        counterEl.textContent = 'Accessi globali registrati: ' + result.total;
+      } else {
         counterEl.textContent = 'Impossibile stimare accessi';
       }
+    } catch (err) {
+      console.error(err);
+      counterEl.textContent = 'Errore nel conteggio accessi';
     }
+  }
 
-    window.addEventListener('DOMContentLoaded', trackAccess);
-  </script>
+  window.addEventListener('DOMContentLoaded', trackAccess);
+</script>
+
 
 </body>
 </html>
-
